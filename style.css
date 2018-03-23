@@ -62,7 +62,7 @@ body {
 header {
     text-align: center;
     color: #fff;
-    font-size: 1.5em;
+    font-size: 1em;
     padding: 1em 0;
     background-color: #f75c03;
 }
@@ -100,17 +100,5 @@ header .emoji {
     }
     header .emoji {
         display: none;
-    }
-}
-
-@media screen and (min-width: 450px) and (max-width: 600px) {
-    header {
-        font-size: 1em;
-    }
-}
-
-@media screen and (min-width: 600px) and (max-width: 900px) {
-    header {
-        font-size: 1.25em;
     }
 }
