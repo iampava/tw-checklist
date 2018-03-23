@@ -1,0 +1,116 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    /* background-color: #33658A; */
+    background-color: #4589BC;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+/* GENERAL STYLES */
+
+.form {
+    color: #fff;
+}
+
+.form .form-group {
+    display: block;
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: .2em;
+}
+
+.form input[type="text"],
+.form input[type="password"] {
+    background-color: #fff;
+    border: 1px solid #034732;
+    font-size: 1.15em;
+    padding: .4em 1em;
+}
+
+.btn {
+    background-color: #283D3B;
+    color: #EAEAEA;
+    box-shadow: 0 0 5px #000;
+    border: 0;
+    font-size: 1.2em;
+    padding: .25em .5em;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0b2c29;
+}
+
+.link {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    padding: 0 .25em;
+}
+
+/****/
+
+header {
+    text-align: center;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 1em 0;
+    background-color: #f75c03;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header .emoji {
+    font-size: .8em;
+}
+
+.link:hover {
+    background-color: #EEF36A;
+    color: #000;
+    font-weight: bold;
+}
+
+#loginForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#loginBtn {
+    display: block;
+    width: 100%;
+    margin: 2em 0 1em 0;
+}
+
+@media screen and (max-width: 450px) {
+    header {
+        font-size: .75em;
+    }
+    header .emoji {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 600px) {
+    header {
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    header {
+        font-size: 1.25em;
+    }
+}
