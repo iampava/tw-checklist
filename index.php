@@ -15,7 +15,7 @@
         session_start();
 
         if(isset($_SESSION['username'])) {
-            header("Location: /php/public/home.php");
+            header("Location: /php/views/home.php");
         }
     ?>
     <header>
@@ -35,13 +35,13 @@
             <input type="password" id="passwordInput" name="password" required />
         </div>
         <button type="submit" class="btn" id="loginBtn" name="submit"> Log in </button>
-        <a href="/checklist" class="link"> Continue as anonymous </a>
-        <?php
-            if(isset($_GET['invalid_login'])){
-                echo "Invalid login";
-            }
-        ?>
+        <a href="/php/views/home.php" class="link"> Continue as anonymous </a>
     </form>
+    <?php
+        if(isset($_GET['invalid_login'])){
+            echo "<p id=\"loginErrorMessage\">⚠ Invalid credentials</p>";
+        }
+    ?>
 </body>
 
 </html>

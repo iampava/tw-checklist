@@ -65,6 +65,7 @@ header {
     padding: 1em 0;
     background-color: #f75c03;
     margin-bottom: 5em;
+    position: relative;
 }
 
 header h1 {
@@ -73,6 +74,15 @@ header h1 {
 
 header .emoji {
     font-size: .8em;
+}
+
+header #logoutLink {
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    border: 2px solid #333;
+    padding: .25em .5em;
+    transform: translateY(-50%);
 }
 
 .link:hover {
@@ -94,9 +104,23 @@ header .emoji {
     margin: 2em 0 1em 0;
 }
 
+#loginErrorMessage {
+    position: fixed;
+    background-color: #fff;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    margin: 0;
+    padding: .5em 0;
+}
+
 @media screen and (max-width: 450px) {
     header {
         font-size: .75em;
+        text-align: left;
+        padding-left: 1em;
     }
     header .emoji {
         display: none;
@@ -107,13 +131,9 @@ header .emoji {
 
 .topic {
     max-width: 800px;
-    /* width: 95%; */
     margin: 2em auto 5em auto;
-    /* background-color: #fff; */
-    /* padding: .5em 1em; */
     border-radius: .5em;
     box-sizing: border-box;
-    /* box-shadow: 0 0 5px #ccc; */
 }
 
 .topic:last-of-type {

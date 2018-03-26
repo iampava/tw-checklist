@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,16 +16,17 @@
 </head>
 
 <body>
-    <?php
-        session_start();
-    ?>
     <header>
         <h1> 
             <span class="emoji">🚀</span> 
             TW Checklist 
             <span class="emoji">🚀</span>
-            
         </h1>
+        <?php 
+            if(isset($_SESSION['username'])){
+                echo "<a href=\"/php/actions/auth/logout.php\" id=\"logoutLink\" class=\"link\">Logout</a>";
+            }
+        ?>
     </header>
     <!-- <h1> Home </h1>
     <a href="php/actions/auth/logout.php"> Logout </a> -->
@@ -52,7 +57,11 @@
         $topics = [];
         $todos = [];
 
-        $csvFile = file('../files/test.csv');
+        if(isset($_SESSION['username'])) {
+            $csvFile = file("../files/{$_SESSION['username']}.csv");
+        } else {
+            $csvFile = file('../files/default.csv');
+        }
 
         foreach ($csvFile as $key => $line) {
             $data[] = str_getcsv($line);
