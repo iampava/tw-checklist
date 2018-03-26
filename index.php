@@ -11,13 +11,6 @@
 </head>
 
 <body>
-    <?php 
-        session_start();
-
-        if(isset($_SESSION['username'])) {
-            header("Location: /php/views/home.php");
-        }
-    ?>
     <header>
         <h1> 
             <span class="emoji">🚀</span> 
@@ -25,7 +18,7 @@
             <span class="emoji">🚀</span>
         </h1>
     </header>
-    <form class="form" id="loginForm" action="/php/actions/auth/login.php" method="POST">
+    <form class="form" id="loginForm" action="" method="POST">
         <div class="form-group">
             <label for="usernameInput"> Username </label>
             <input type="text" id="usernameInput" name="username" required/>
@@ -37,11 +30,6 @@
         <button type="submit" class="btn" id="loginBtn" name="submit"> Log in </button>
         <a href="/php/views/home.php" class="link"> Continue as anonymous </a>
     </form>
-    <?php
-        if(isset($_GET['invalid_login'])){
-            echo "<p id=\"loginErrorMessage\">⚠ Invalid credentials</p>";
-        }
-    ?>
 </body>
 
 </html>
