@@ -7,7 +7,6 @@ body {
 }
 
 body {
-    /* background-color: #33658A; */
     background-color: #4589BC;
     font-family: 'IBM Plex Mono', monospace;
 }
@@ -65,6 +64,7 @@ header {
     font-size: 1em;
     padding: 1em 0;
     background-color: #f75c03;
+    margin-bottom: 5em;
 }
 
 header h1 {
@@ -100,5 +100,70 @@ header .emoji {
     }
     header .emoji {
         display: none;
+    }
+}
+
+/** HOME page */
+
+.topic {
+    max-width: 800px;
+    /* width: 95%; */
+    margin: 2em auto 5em auto;
+    /* background-color: #fff; */
+    /* padding: .5em 1em; */
+    border-radius: .5em;
+    box-sizing: border-box;
+    /* box-shadow: 0 0 5px #ccc; */
+}
+
+.topic:last-of-type {
+    margin-bottom: 0;
+}
+
+.topic__title {
+    margin-top: .25em;
+    margin-bottom: 0em;
+    color: #fff;
+    background-color: #333;
+    display: inline-block;
+    padding: .25em 1em;
+    text-transform: uppercase;
+}
+
+.topic__todo {
+    padding: 1em 0 1em 2em;
+    background-color: #fff;
+    position: relative;
+    font-size: 1.2em;
+}
+
+.topic__todo:nth-of-type(2n) {
+    background-color: #eee;
+}
+
+.topic__todo input[type="checkbox"] {
+    width: 2em;
+    height: 2em;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    background: none;
+    border: 2px solid #000;
+}
+
+.topic__todo .todo-text {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.topic__todo input[type="checkbox"]:checked+.todo-text {
+    text-decoration: line-through;
+}
+
+@media screen and (max-width: 450px) {
+    .topic__todo {
+        font-size: 1em;
+        padding-left: .5em;
     }
 }
