@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="./style.css" />
 </head>
 
-<body>
+<body class="home-page">
     <header>
         <h1> 
             <span class="emoji">🚀</span> 
@@ -28,77 +28,79 @@
             }
         ?>
     </header>
-    <!-- <h1> Home </h1>
-    <a href="php/actions/auth/logout.php"> Logout </a> -->
-    <?php 
-        class ToDo {
-            private $task;
-            private $topic;
-        
-            public function __construct($task, $topic) {
-                $this->task = $task;
-                $this->topic = $topic;
-            }
-
-            public function isFromTopic($topic) {
-                if($this->topic == $topic) {
-                    return TRUE;
-                } else {
-                    return FALSE;
-                }
-            }
-
-            public function getTask() {
-                return $this->task;
-            }
-        }
-
-        $data = [];
-        $topics = [];
-        $todos = [];
-
-        if(isset($_SESSION['username'])) {
-            $csvFile = file("../files/{$_SESSION['username']}.csv");
-        } else {
-            $csvFile = file('../files/default.csv');
-        }
-
-        foreach ($csvFile as $key => $line) {
-            $data[] = str_getcsv($line);
-            $topics[$data[$key][0]] = TRUE;
-
-            array_push($todos, new ToDo($data[$key][1], $data[$key][0]));
-        }
-
-        foreach($topics as $topicKey => $value) {
-            echo '<section class="topic">';
-            echo "<h1 class=\"topic__title\"> {$topicKey} </h1>";
+    <div id="todos">
+        <?php 
+            class ToDo {
+                private $task;
+                private $topic;
             
-            foreach($todos as $index => $todo) {
-                if($todo->isFromTopic($topicKey)) {
-                    echo "
-                    <div class=\"topic__todo\">
-                        <input type=\"checkbox\" id=\"todo{$index}\" >
-                        <label class=\"todo-text\" for=\"todo{$index}\"> {$todo->getTask()}</label>
-                    </div>
-                    ";
+                public function __construct($task, $topic) {
+                    $this->task = $task;
+                    $this->topic = $topic;
+                }
+
+                public function isFromTopic($topic) {
+                    if($this->topic == $topic) {
+                        return TRUE;
+                    } else {
+                        return FALSE;
+                    }
+                }
+
+                public function getTask() {
+                    return $this->task;
                 }
             }
 
-            echo '</section>';
-        }
-    ?>
-    <!-- <section class="topic">
-        <h1 class="topic__title"> Logistics </h1>
-        <div class="topic__todo">
-            <input type="checkbox" id="todo1" >
-            <label class="todo-text" for="todo1"> To do 1</label>
-        </div>
-        <div class="topic__todo">
-            <input type="checkbox" id="todo1" >
-            <label class="todo-text" for="todo1"> To do 1</label>
-        </div>
-    </section> -->
+            $data = [];
+            $topics = [];
+            $todos = [];
+
+            if(isset($_SESSION['username'])) {
+                $csvFile = file("../files/{$_SESSION['username']}.csv");
+            } else {
+                $csvFile = file('../files/default.csv');
+            }
+
+            foreach ($csvFile as $key => $line) {
+                $data[] = str_getcsv($line);
+                $topics[$data[$key][0]] = TRUE;
+
+                array_push($todos, new ToDo($data[$key][1], $data[$key][0]));
+            }
+
+            foreach($topics as $topicKey => $value) {
+                echo '<section class="topic">';
+                echo "<h1 class=\"topic__title\"> {$topicKey} </h1>";
+                
+                foreach($todos as $index => $todo) {
+                    if($todo->isFromTopic($topicKey)) {
+                        echo "
+                        <div class=\"topic__todo\">
+                            <input data-topic=\"{$topicKey}\" data-todo=\"{$todo->getTask()}\" type=\"checkbox\" id=\"todo{$index}\" >
+                            <label class=\"todo-text\" for=\"todo{$index}\"> {$todo->getTask()}</label>
+                        </div>
+                        ";
+                    }
+                }
+
+                echo '</section>';
+            }
+        ?>
+        <!-- <section class="topic">
+            <h1 class="topic__title"> Logistics </h1>
+            <div class="topic__todo">
+                <input type="checkbox" id="todo1" >
+                <label class="todo-text" for="todo1"> To do 1</label>
+            </div>
+            <div class="topic__todo">
+                <input type="checkbox" id="todo1" >
+                <label class="todo-text" for="todo1"> To do 1</label>
+            </div>
+        </section> -->
+    </div>
+    <div id="notification"> </div>
+    <script src="/app.js" type="text/javascript"></script>
 </body>
 
 </html>

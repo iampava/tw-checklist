@@ -117,10 +117,12 @@ header #logoutLink {
 }
 
 @media screen and (max-width: 450px) {
-    header {
-        font-size: .75em;
+    .home-page header {
         text-align: left;
         padding-left: 1em;
+    }
+    header {
+        font-size: .75em;
     }
     header .emoji {
         display: none;
@@ -179,6 +181,23 @@ header #logoutLink {
 
 .topic__todo input[type="checkbox"]:checked+.todo-text {
     text-decoration: line-through;
+}
+
+#notification {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    transform: translatex(100%);
+    background-color: #158e15;
+    padding: 1em;
+    color: #fff;
+    font-weight: bold;
+    transition: transform .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    text-align: right;
+}
+
+#notification.visible {
+    transform: translatex(0);
 }
 
 @media screen and (max-width: 450px) {
