@@ -19,13 +19,20 @@
         }
     ?>
     <header>
-        <h1> 
-            <span class="emoji">🚀</span> 
-            TW Checklist 
+        <h1>
+            <span class="emoji">🚀</span>
+            TW Checklist
             <span class="emoji">🚀</span>
         </h1>
     </header>
     <form class="form" id="loginForm" action="/php/actions/auth/login.php" method="POST">
+        <div class="form__github">
+            <button type="button" class="btn" id="gitHubLoginBtn">
+                <img src="./github-logo.svg" alt="GitHub Logo" />
+                <span> Sign in with GitHub </span>
+            </button>
+            <p class="separator"> or </p>
+        </div>
         <div class="form-group">
             <label for="usernameInput"> Username </label>
             <input type="text" id="usernameInput" name="username" required/>

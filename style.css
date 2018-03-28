@@ -17,6 +17,37 @@ body {
     color: #fff;
 }
 
+.form__github {
+    text-align: center;
+}
+.form__github .btn {
+    width: 100%;
+    display: block;
+}
+
+.form__github .separator {
+    font-size: 1.25em;
+    margin: .75em 0 .5em 0;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.form__github .separator:before,
+.form__github .separator:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 60%;
+    left: 0;
+    height: 1px;
+    background-color: #fff;
+}
+
+.form__github .separator:after {
+    left: 60%;
+    right: 0;
+}
+
 .form .form-group {
     display: block;
     margin-bottom: 1em;
@@ -102,6 +133,23 @@ header #logoutLink {
     display: block;
     width: 100%;
     margin: 2em 0 1em 0;
+}
+
+#gitHubLoginBtn {
+    background: #fff;
+    color: #000;
+}
+
+#gitHubLoginBtn:hover {
+    box-shadow: 0 0 10px #000;
+}
+#gitHubLoginBtn img {
+    height: 32px;
+    vertical-align: middle;
+}
+
+#gitHubLoginBtn .btn__text {
+    vertical-align: middle;
 }
 
 #loginErrorMessage {
