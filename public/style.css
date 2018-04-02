@@ -11,6 +11,13 @@ body {
     font-family: 'IBM Plex Mono', monospace;
 }
 
+/* REUSABLE STYLES */
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
 /* GENERAL STYLES */
 
 .form {
@@ -20,6 +27,7 @@ body {
 .form__github {
     text-align: center;
 }
+
 .form__github .btn {
     width: 100%;
     display: block;
@@ -107,13 +115,17 @@ header .emoji {
     font-size: .8em;
 }
 
-header #logoutLink {
+header #logoutBtn {
     position: absolute;
     top: 50%;
     right: 1em;
     border: 2px solid #333;
     padding: .25em .5em;
     transform: translateY(-50%);
+    background: none;
+    color: #fff;
+    font-size: 1.15em;
+    cursor: pointer;
 }
 
 .link:hover {
@@ -143,6 +155,7 @@ header #logoutLink {
 #gitHubLoginBtn:hover {
     box-shadow: 0 0 10px #000;
 }
+
 #gitHubLoginBtn img {
     height: 32px;
     vertical-align: middle;

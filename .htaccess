@@ -1,0 +1,6 @@
+ErrorDocument 404 /app/views/404.view.php
+
+RewriteEngine On    # Turn on the rewriting engine
+
+RewriteRule    ^/?$    app/controllers/login.controller.php    [NC,L]  
+RewriteRule ^home/?$ app/controllers/home.controller.php [NC,L]

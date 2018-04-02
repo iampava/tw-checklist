@@ -7,28 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TW Checklist</title>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="/public/style.css" />
 </head>
 
 <body>
     <?php 
-        session_start();
+        include $_SERVER['DOCUMENT_ROOT'] . "/app/views/components/general.components.php";
 
-        if(isset($_SESSION['username'])) {
-            header("Location: /php/views/home.php");
-        }
+        echo Components::createHeader();
     ?>
-    <header>
-        <h1>
-            <span class="emoji">🚀</span>
-            TW Checklist
-            <span class="emoji">🚀</span>
-        </h1>
-    </header>
-    <form class="form" id="loginForm" action="/php/actions/auth/login.php" method="POST">
+    
+    <form class="form" id="loginForm" action="/" method="POST">
         <div class="form__github">
             <button type="button" class="btn" id="gitHubLoginBtn">
-                <img src="./github-logo.svg" alt="GitHub Logo" />
+                <img src="public/images/github-logo.svg" alt="GitHub Logo" />
                 <span> Sign in with GitHub </span>
             </button>
             <p class="separator"> or </p>
@@ -41,8 +33,8 @@
             <label for="passwordInput"> Password </label>
             <input type="password" id="passwordInput" name="password" required />
         </div>
-        <button type="submit" class="btn" id="loginBtn" name="submit"> Log in </button>
-        <a href="/php/views/home.php" class="link"> Continue as anonymous </a>
+        <button type="submit" class="btn" id="loginBtn" name="login_submit"> Log in </button>
+        <a href="/home" class="link"> Continue as anonymous </a>
     </form>
     <?php
         if(isset($_GET['invalid_login'])){
