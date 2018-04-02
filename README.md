@@ -15,6 +15,6 @@ You can find the final version of the App on the [final branch](https://github.c
 
 ### Additional info
 
-* [Course Page] (https://profs.info.uaic.ro/~busaco/teach/courses/web/)
+* [Course Page](https://profs.info.uaic.ro/~busaco/teach/courses/web/)
 * [Laboratories page](https:iampava.com/tw)
 * [Slides](http://slides.com/iampava/tw)
